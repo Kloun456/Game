@@ -17,4 +17,5 @@ public:
     void Show_atacks();
     bool Reinforced_blow(Monster* monster);
     bool Super_blow(Monster* monster);
+    void Taking_xp(Monster* monster);
 };
