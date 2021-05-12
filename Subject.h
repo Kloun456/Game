@@ -1,10 +1,15 @@
 #pragma once
+#include <string>
+class Hero;
+
+using namespace std;
 
 class Subject
 {
 public:
-	void Show_subject();
-	void Use_subject();
-
+	virtual string Show_subject() = 0;
+	int Get_ident() { return this->ident; }
+	virtual void Use(Hero* hero) = 0;
+protected:
+	int ident;
 };
-
