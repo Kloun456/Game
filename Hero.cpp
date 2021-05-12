@@ -1,4 +1,6 @@
 #include "Hero.h"
+#include "MP_potion.h"
+#include "HP_potion.h"
 
 void Hero::Go_down(Location *loc)
 {
@@ -53,16 +55,6 @@ void Hero::Go_right(Location* loc)
         cout << "Impossible to pass!" << endl;
 }
 
-void Hero::Taking_xp(Monster *monster)
-{
-    xp += monster->lvl * 50;
-    if (xp >= lvl * 100)
-    {
-        xp = xp - lvl * 100;
-        lvl++;
-    }
-}
-
 void Hero::Blow(Monster *monster)
 {
     
@@ -82,7 +74,7 @@ void Hero::Show_stat()
 
 bool Hero::Fight(Monster* monster)
 {
-int action;
+    int action;
     cout << "Fight!\n";
     while (hp > 0 && monster->hp > 0)
     {
