@@ -2,8 +2,8 @@
 #include "Weapon.h"
 #include "Location.h"
 #include "Monster.h"
+#include <vector>
 #include "Subject.h"
-#include <list>
 
 class Hero
 {
@@ -51,4 +51,3 @@ protected:
     friend class HP_potion;
     int xp, lvl, hp, mp, atack, armor, pos_i, pos_j, temp_pos_i, temp_pos_j, temp_hp, temp_mp;
 };
-
