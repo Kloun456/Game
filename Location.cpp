@@ -5,7 +5,7 @@ Location::Location(Hero *hero)
 {
     srand(time(0));
     int temp;
-    this->n = rand() % 2 + 3; // ðàçìåð îò 3 äî 4
+    this->n = rand() % 2 + 3; // Ã°Ã Ã§Ã¬Ã¥Ã° Ã®Ã² 3 Ã¤Ã® 4
     this->field = new string * [n];
     for (int i = 0; i < n; i++)
         this->field[i] = new string[n];
@@ -119,4 +119,24 @@ void Location::Get_player_position(int& position_i, int& position_j)
                 position_i = i;
                 position_j = j;
             }
+}
+
+Subject *Location::Get_treasure()
+{
+    srand(time(0));
+    int temp = rand() % 2;  // Ð¾Ñ‚ 0 Ð´Ð¾ 1
+    Subject* subj;
+    MP_potion potion1;
+    HP_potion potion2;
+    switch (temp)
+    {
+    case 0:
+        subj = new MP_potion();
+        break;
+    default:
+        subj = new HP_potion();
+        break;
+    }
+    return subj;
+    
 }
