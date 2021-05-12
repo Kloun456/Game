@@ -5,7 +5,7 @@
 #include "Hero.h"
 #include "Wizard.h"
 #include "Forest.h"
-
+#include "Subject.h"
 
 using namespace std;
 
