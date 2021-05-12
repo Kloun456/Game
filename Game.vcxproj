@@ -144,8 +144,10 @@
     <ClCompile Include="Forest.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="HP_potion.cpp" />
     <ClCompile Include="Location.cpp" />
     <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="MP_potion.cpp" />
     <ClCompile Include="Orc.cpp" />
     <ClCompile Include="Stick.cpp" />
     <ClCompile Include="Subject.cpp" />
@@ -159,8 +161,10 @@
     <ClInclude Include="Demon.h" />
     <ClInclude Include="Forest.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="HP_potion.h" />
     <ClInclude Include="Location.h" />
     <ClInclude Include="Monster.h" />
+    <ClInclude Include="MP_potion.h" />
     <ClInclude Include="Orc.h" />
     <ClInclude Include="Stick.h" />
     <ClInclude Include="Subject.h" />
