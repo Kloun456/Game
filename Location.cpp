@@ -1,5 +1,8 @@
 #include "Location.h"
 #include "Hero.h"
+#include "HP_potion.h"
+#include "MP_potion.h"
+#include "Subject.h"
 
 Location::Location(Hero *hero)
 {
