@@ -11,8 +11,8 @@ using namespace std;
 
 int main()
 {
-    
     int action;
+    Subject* subject;
     Hero* hero;
     Warrior war;
     Wizard wiz;
@@ -52,7 +52,7 @@ int main()
         cout << "\nYour stat :\n";
         hero->Show_stat();
         loc->Show_location();
-        cout << "\nChoose action:\n1 - Go up\n2 - Go down\n3 - Go left\n4 - Go right\n";
+        cout << "\nChoose action:\n1 - Go up\n2 - Go down\n3 - Go left\n4 - Go right\n5- Invetn\n";
         cin >> action;
         system("cls");
         switch (action)
@@ -69,6 +69,15 @@ int main()
         case 4:
             hero->Go_right(loc);
             break;
+        case 5:
+            if (hero->Show_inventory())
+            {
+                cout << "\nYou want to use subject?\n1 - Yes\n2 - NO\n";
+                cin >> action;
+                if (action == 1)
+                    hero->Use_subject();
+            }
+            break;
         }
         action = loc->Check_position(hero);
         switch (action)
@@ -79,6 +88,7 @@ int main()
             {
                 loc->Decrease_monsters();
                 loc->monster->Restore();
+                hero->Taking_xp(loc->monster);
             }
             break;
         case 2:
@@ -89,12 +99,20 @@ int main()
             loc->Trap_damage(hero);
             break;
         case 4:
-            cout << "Treasure\n";
+            subject = loc->Get_treasure();
+            cout << "\nYou find treasure it`s " << subject->Show_subject();
+            cout << "\nTake this treasure?\n1 - Yes\n2 - NO\n";
+            cin >> action;
+            if (action == 1)
+                hero->Add_subject(subject);
             break;
         case 5:
-            cout << "You find exit: Go out?\n0 - Yes\n1 - No\n";
+            cout << "You find exit: Go out?\n1 - Yes\n2 - No\n";
             cin >> action;
+            if (action == 1)
+                action = 0;
             hero->Cancel_action();
+            break;
         }
         hero->Change_position(loc); 
     }
