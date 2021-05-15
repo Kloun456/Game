@@ -9,6 +9,7 @@ public:
         hp = lvl * 100;
         atack = 5 + lvl * 5;
         armor = 2 + lvl * 2;
+        temp_hp = hp;`
     }
     string Hwo()
     {
