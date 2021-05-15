@@ -19,12 +19,10 @@ public:
 	void Restore()
 	{
 		hp = temp_hp;
-		atack = temp_atack;
-		armor = temp_armor;
 	}
 protected:
 	friend class Hero;
 	friend class Warrior;
 	friend class Wizard;
-	int hp, lvl, atack, armor, temp_hp, temp_atack, temp_armor;
+	int hp, lvl, atack, armor, temp_hp;
 };
